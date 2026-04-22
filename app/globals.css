@@ -4,6 +4,19 @@
 
 @custom-variant dark (&:is(.dark *));
 
+* {
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: epilogue;
+}
+
+@theme {
+  --font-epilogue: var(--font-epilogue), ui-sans-serif, system-ui, sans-serif;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
