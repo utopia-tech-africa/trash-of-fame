@@ -14,7 +14,8 @@ const ComponentLayout = ({ children, className, id }: Props) => {
       className={cn(
         "w-full px-4 md:px-10 lg:px-15 xl:px-20 mx-auto",
         className,
-      )}>
+      )}
+    >
       {children}
     </section>
   );
