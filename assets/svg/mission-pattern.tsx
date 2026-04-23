@@ -1,7 +1,8 @@
-export const MissionPattern = () => {
+export const MissionPattern = ({ className }: { className?: string }) => {
   return (
     <div>
       <svg
+        className={className}
         width="529"
         height="146"
         viewBox="0 0 529 146"

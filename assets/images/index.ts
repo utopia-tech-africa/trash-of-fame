@@ -7,6 +7,7 @@ import MediaImg3 from "./media-img3.webp";
 import ProblemImg from "./problem-img.webp";
 import TOFImg from "./tof-img.webp";
 import NavPattern from "./nav-pattern.webp";
+import MissionImg from "./mission-img.webp";
 
 export {
   HeroImg,
@@ -18,4 +19,5 @@ export {
   ProblemImg,
   TOFImg,
   NavPattern,
+  MissionImg,
 };
