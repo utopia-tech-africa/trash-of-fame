@@ -24,6 +24,8 @@ const formSchema = z.object({
 
 type FormData = z.infer<typeof formSchema>;
 
+const interests = ["Partnerships", "Distribution", "Retail", "Other"];
+
 export const Contact = () => {
   const {
     register,
@@ -44,8 +46,6 @@ export const Contact = () => {
   const onSubmit = (data: FormData) => {
     console.log(data);
   };
-
-  const interests = ["Partnerships", "Distribution", "Retail", "Other"];
 
   return (
     <section className="relative border-[#2b1f13] border-b border-t flex flex-col lg:flex-row items-center lg:items-stretch justify-between px-4 sm:px-6 md:px-8 lg:px-12 xl:px-15 text-white overflow-hidden mb-16 sm:mb-20 md:mb-24 lg:mb-28 xl:mb-32">
