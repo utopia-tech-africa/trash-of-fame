@@ -17,7 +17,6 @@ const navRight = [
 ];
 
 export const Navbar = () => {
-  // work on later
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const allMobileNavItems = [
@@ -28,8 +27,15 @@ export const Navbar = () => {
   return (
     <>
       <nav
-        className="sticky top-0 w-full z-50 bg-[#110B0B] text-white border-b border-[#402F1D]"
-        style={{ backgroundImage: `url(${NavPattern.src})` }}
+        className="sticky top-0 w-full z-50 text-white bg-[#110B0B] border-b border-[#402F1D]"
+        style={{
+          backgroundImage: `
+      linear-gradient(rgba(17,11,11,0.95), rgba(17,11,11,0.9)),
+      url(${NavPattern.src})
+    `,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
       >
         <ComponentLayout>
           {/* desktop */}
@@ -41,10 +47,10 @@ export const Navbar = () => {
                   <a
                     key={item.label}
                     href={item.href}
-                    className={`px-6 py-5 ${
+                    className={`py-5 ${
                       isMedia
-                        ? "border-x border-[#402F1D] hover:bg-white/10 transition-colors ease-in duration-300"
-                        : "hover:bg-white/10 transition-colors ease-in duration-300"
+                        ? "border-x border-[#402F1D] hover:bg-white/10 transition-colors ease-in px-4.5 duration-300"
+                        : "hover:bg-white/10 transition-colors ease-in duration-300 pr-4.5"
                     }`}
                   >
                     {item.label}
@@ -53,7 +59,7 @@ export const Navbar = () => {
               })}
             </div>
 
-            <div className="text-center font-semibold tracking-wide px-6 py-5">
+            <div className="text-center font-light tracking-wide px-6 py-5">
               Trash of Fame
             </div>
 
@@ -62,7 +68,7 @@ export const Navbar = () => {
                 <a
                   key={item.label}
                   href={item.href}
-                  className="px-6 py-5 border-l border-[#402F1D] hover:bg-white/10 transition-colors ease-in duration-300 text-nowrap"
+                  className="px-4.5  py-5 border-l border-[#402F1D] hover:bg-white/10 transition-colors ease-in duration-300 text-nowrap"
                 >
                   {item.label}
                 </a>
@@ -70,27 +76,62 @@ export const Navbar = () => {
             </div>
           </div>
 
-          {/* mobile */}
-          <div className="md:hidden flex items-center justify-between py-3">
+          <div className="md:hidden grid grid-cols-3 w-full border-b border-[#402F1D]">
+            {/* left */}
             <button
               onClick={() => setMobileMenuOpen(true)}
-              className="flex items-center gap-2 text-white"
-              aria-label="Menu"
+              className="text-sm font-medium text-left px-4 py-3 flex items-center border-r border-[#402F1D]"
             >
-              <span className="text-sm font-medium">Menu</span>
+              Menu
             </button>
 
-            <div className="tracking-wide text-base">Trash of Fame</div>
+            <div className="text-sm text-center font-extralight px-5 py-3 flex items-center justify-center border-r border-[#402F1D] text-nowrap">
+              Trash of Fame
+            </div>
 
             <a
               href="#volunteer"
-              className="text-sm font-medium text-white hover:bg-white/10 transition-colors ease-in duration-300text-nowrap"
+              className="text-sm font-medium text-right px-4 py-3 flex items-center justify-end"
             >
               Volunteer
             </a>
           </div>
         </ComponentLayout>
       </nav>
+
+      {/* mobile*/}
+      <div
+        className={`md:hidden fixed left-0 top-0 w-full h-full z-50 transition-transform duration-500 ease-out ${
+          mobileMenuOpen ? "translate-y-0" : "-translate-y-full"
+        }`}
+      >
+        <div className="w-full h-full bg-[#110B0B] border-b border-[#402F1D] flex flex-col">
+          <div className="flex items-center justify-between px-6 py-4 border-b border-[#402F1D]">
+            <span className="text-sm font-medium">Menu</span>
+
+            <button
+              onClick={() => setMobileMenuOpen(false)}
+              aria-label="Close menu"
+            >
+              <X className="text-white" />
+            </button>
+          </div>
+
+          <div className="flex flex-col flex-1">
+            {allMobileNavItems.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="relative overflow-hidden px-8 text-white text-center py-4 border-b border-[#402F1D] group text-sm"
+              >
+                <span className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+                <span className="relative z-10">{item.label}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
     </>
   );
 };
