@@ -37,9 +37,9 @@ export const AboutVideo = () => {
             className="absolute top-4 right-4 bg-black/60 p-2 cursor-pointer rounded-full text-white hover:bg-black/80 transition"
           >
             {muted ? (
-              <VolumeX className="w-5 h-5" />
+              <VolumeX className="w-3 h-3 md:w-5 md:h-5" />
             ) : (
-              <Volume2 className="w-5 h-5" />
+              <Volume2 className="w-3 h-3 md:w-5 md:h-5" />
             )}
           </button>
         </div>
