@@ -33,7 +33,7 @@ export const Contact = () => {
     control,
     formState: { errors, isSubmitting },
   } = useForm<FormData>({
-    resolver: zodResolver(formSchema),
+    resolver: zodResolver(formSchema as any),
     defaultValues: {
       fullName: "",
       email: "",
