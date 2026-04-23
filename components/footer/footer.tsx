@@ -27,7 +27,7 @@ const socialLinks = [
 
 export const Footer = () => {
   return (
-    <footer className="w-full bg-[#0F0A06] border-t border-[#3A2A1A] flex flex-col md:flex-row">
+    <footer className="w-full border-t border-[#3A2A1A] flex flex-col md:flex-row">
       {/* left */}
       <div className="w-full md:flex-1 order-2 md:order-1 relative flex items-center justify-center md:justify-start md:pl-10 overflow-hidden py-10 md:py-0">
         <div className="absolute bottom-[-40%] left-1/2 -translate-x-1/2 md:left-[-20%] md:translate-x-0 w-125 h-125 md:w-175 md:h-175 bg-[radial-gradient(circle,rgba(120,72,28,0.35)_0%,rgba(15,10,6,0)_70%)] pointer-events-none" />

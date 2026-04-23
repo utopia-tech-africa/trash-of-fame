@@ -8,6 +8,7 @@ import ProblemImg from "./problem-img.webp";
 import TOFImg from "./tof-img.webp";
 import NavPattern from "./nav-pattern.webp";
 import MissionImg from "./mission-img.webp";
+import ContactPattern from "./contact-pattern.webp";
 
 export {
   HeroImg,
@@ -20,4 +21,5 @@ export {
   TOFImg,
   NavPattern,
   MissionImg,
+  ContactPattern,
 };
