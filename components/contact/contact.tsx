@@ -82,7 +82,7 @@ export const Contact = () => {
         {/* name */}
         <div className="flex flex-col gap-2 w-full">
           <label className="text-[14px]">
-            Full name <span className="text-[#c01a00]">*</span>
+            Full name <span className="text-[#c01a00f7]">*</span>
           </label>
           <Input
             placeholder="John Doe"
