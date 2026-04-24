@@ -18,14 +18,14 @@ import { useState } from "react";
 const formSchema = z.object({
   fullName: z.string().min(2, "Required"),
   email: z.string().email("Invalid email"),
-  phone: z.string().min(6, "Required"),
+  phone: z.string().optional(),
   interest: z.string().min(1, "Required"),
   message: z.string().optional(),
 });
 
 type FormData = z.infer<typeof formSchema>;
 
-const interests = ["Partnerships", "Distribution", "Retail", "Other"];
+const interests = ["Volunteer", "Support", "Partnership", "Sponsorship"];
 
 export const Contact = () => {
   const {
@@ -150,9 +150,7 @@ export const Contact = () => {
 
         {/* phone */}
         <div className="flex flex-col gap-2 w-full">
-          <label className="text-[14px]">
-            Phone <span className="text-[#c01a00]">*</span>
-          </label>
+          <label className="text-[14px]">Phone</label>
           <div className="border border-[#654829] flex items-center p-2 w-full bg-transparent">
             <Controller
               control={control}
