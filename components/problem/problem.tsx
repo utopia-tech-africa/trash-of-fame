@@ -20,17 +20,17 @@ export const Problem = () => {
   return (
     <section className="text-white flex min-h-[95vh] bg-[#16100A]">
       {" "}
-      <div className="w-full flex flex-col md:flex-row gap-2 md:gap-6 lg:gap-8 items-stretch">
-        <div className="w-full md:w-[35%] lg:w-[30%] relative flex items-start overflow-hidden pl-4 md:pl-10 lg:pl-15 xl:pl-20">
+      <div className="w-full flex flex-col lg:flex-row gap-2 md:gap-6 lg:gap-8 items-stretch">
+        <div className="w-full  lg:w-[30%] flex items-start overflow-hidden pl-4 md:pl-10 lg:pl-15 xl:pl-20 sticky top-[44px] z-30 lg:static bg-[#16100A]">
           <div className="absolute inset-0 -left-10 -top-10 z-0 pointer-events-none">
             <ProblemPattern className="w-full h-full" />
           </div>
-          <h1 className="relative mx-auto md:mx-0 text-center md:text-start z-10 pt-8.5 lg:pt-12.25 text-2xl md:text-3xl lg:text-[32px] font-bold uppercase leading-[1.15] mb-3 max-w-105">
+          <h1 className="relative mx-auto md:mx-0 text-center md:text-start z-10 pt-6 md:py-11 lg:pt-12.25 text-2xl lg:text-[32px] font-bold uppercase leading-[1.15] mb-3 max-w-105">
             See the Problem. <br /> Watch the Solution Begin
           </h1>
         </div>
 
-        <div className="w-full md:w-[65%] lg:w-[70%] relative flex flex-col gap-12 md:gap-0 md:block md:h-full md:overflow-hidden pb-[10vh] md:pb-0">
+        <div className="w-full lg:w-[70%] relative flex flex-col gap-12 md:gap-0 md:block md:h-full md:overflow-hidden pb-[10vh] md:pb-0">
           <div
             onMouseEnter={() => setHover("image")}
             onMouseLeave={() => setHover(null)}
