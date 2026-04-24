@@ -11,7 +11,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { ContactPattern } from "@/assets/images";
-import { ChevronsRight } from "lucide-react";
+import { ChevronsRight, CheckCircle2, AlertCircle } from "lucide-react";
+import { useState } from "react";
 
 // schema
 const formSchema = z.object({
@@ -31,6 +32,7 @@ export const Contact = () => {
     register,
     handleSubmit,
     control,
+    reset,
     formState: { errors, isSubmitting },
   } = useForm<FormData>({
     resolver: zodResolver(formSchema as any),
@@ -43,8 +45,42 @@ export const Contact = () => {
     },
   });
 
-  const onSubmit = (data: FormData) => {
-    console.log(data);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: "success" | "error" | null;
+    message: string | null;
+  }>({ type: null, message: null });
+
+  const onSubmit = async (data: FormData) => {
+    setSubmitStatus({ type: null, message: null });
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitStatus({
+          type: "success",
+          message:
+            result.message ||
+            "Thank you! Your message has been sent successfully.",
+        });
+        reset();
+      } else {
+        setSubmitStatus({
+          type: "error",
+          message: result.error || "Something went wrong. Please try again.",
+        });
+      }
+    } catch (error) {
+      setSubmitStatus({
+        type: "error",
+        message: "An unexpected error occurred. Please try again later.",
+      });
+    }
   };
 
   return (
@@ -178,13 +214,29 @@ export const Contact = () => {
           />
         </div>
 
+        {/* Status Messages */}
+        {submitStatus.type === "success" && (
+          <div className="flex items-center gap-2 p-4 mb-4 text-sm bg-green-500/10 border border-green-500/50 text-green-500 rounded-md">
+            <CheckCircle2 className="w-5 h-5 shrink-0" />
+            <p>{submitStatus.message}</p>
+          </div>
+        )}
+        {submitStatus.type === "error" && (
+          <div className="flex items-center gap-2 p-4 mb-4 text-sm bg-red-500/10 border border-red-500/50 text-red-500 rounded-md">
+            <AlertCircle className="w-5 h-5 shrink-0" />
+            <p>{submitStatus.message}</p>
+          </div>
+        )}
+
         {/* Submit */}
         <Button
           type="submit"
           disabled={isSubmitting}
-          className="bg-[#654829] cursor-pointer border z-10 border-[#402f1d] flex gap-2.5 items-center justify-center px-6 py-3 w-full text-white hover:bg-[#654829]/80 transition-colors ease-in duration-300"
+          className="bg-[#654829] cursor-pointer border z-10 border-[#402f1d] flex gap-2.5 items-center justify-center px-6 py-3 w-full text-white hover:bg-[#654829]/80 transition-colors ease-in duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          <span className="font-semibold text-[18px]">Submit</span>
+          <span className="font-semibold text-[18px]">
+            {isSubmitting ? "Submitting..." : "Submit"}
+          </span>
           <ChevronsRight className="w-4.5 h-4.5" />
         </Button>
       </form>
