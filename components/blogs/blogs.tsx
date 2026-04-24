@@ -105,7 +105,10 @@ export const Blogs = ({ blogs = [] }: BlogsProps) => {
   if (!blogs || blogs.length === 0) return null;
 
   return (
-    <ComponentLayout className="flex flex-col gap-18 pb-16 sm:pb-24 md:pb-32 overflow-hidden">
+    <ComponentLayout
+      id="media"
+      className="flex flex-col gap-18 pb-16 sm:pb-24 md:pb-32 overflow-hidden"
+    >
       <div className="flex flex-col gap-2 items-center justify-center text-center max-w-2xl mx-auto">
         <h2 className="font-bold text-[28px] md:text-[36px] lg:text-[42px] leading-[1.2] text-[#fff8f1] uppercase">
           get updated on the movement

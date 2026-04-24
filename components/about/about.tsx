@@ -47,7 +47,10 @@ export const About = () => {
   }, []);
 
   return (
-    <section className="relative w-full bg-[#110B0B] overflow-hidden py-14 sm:py-24 md:py-32">
+    <section
+      id="about"
+      className="relative w-full bg-[#110B0B] overflow-hidden py-16 sm:py-24 md:py-32"
+    >
       <div className="absolute right-[-10%] top-0 h-full w-full opacity-60 pointer-events-none z-0">
         <AboutPattern className="w-full h-full text-[#3A2A1A]" />
       </div>
@@ -63,7 +66,7 @@ export const About = () => {
           </h1>
 
           <div
-            className="absolute right-[12%] sm:right-[14%] -top-6 sm:-top-16 md:-top-32 lg:-top-24 w-26.75 h-27 md:h-55.75 md:w-55.75 aspect-square transition-transform duration-75 ease-out z-10"
+            className="absolute right-[5%] sm:right-[14%] -top-6 sm:-top-8 md:-top-15 w-26.75 h-27 md:h-55.75 md:w-55.75 aspect-square transition-transform duration-75 ease-out z-10"
             style={{
               transform: `translateY(${offset}px)`,
             }}
