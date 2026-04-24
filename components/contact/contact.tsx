@@ -76,6 +76,7 @@ export const Contact = () => {
         });
       }
     } catch (error) {
+      console.log(error);
       setSubmitStatus({
         type: "error",
         message: "An unexpected error occurred. Please try again later.",
@@ -84,7 +85,10 @@ export const Contact = () => {
   };
 
   return (
-    <section className="relative border-[#2b1f13] border-b border-t flex flex-col lg:flex-row items-center lg:items-stretch justify-between px-4 sm:px-6 md:px-8 lg:px-12 xl:px-15 text-white overflow-hidden mb-16 sm:mb-20 md:mb-24 lg:mb-28 xl:mb-32">
+    <section
+      id="contact"
+      className="relative border-[#2b1f13] border-b border-t flex flex-col lg:flex-row items-center lg:items-stretch justify-between px-4 sm:px-6 md:px-8 lg:px-12 xl:px-15 text-white overflow-hidden mb-16 sm:mb-20 md:mb-24 lg:mb-28 xl:mb-32"
+    >
       <Image
         src={ContactPattern}
         alt="pattern"

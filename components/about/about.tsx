@@ -47,7 +47,10 @@ export const About = () => {
   }, []);
 
   return (
-    <section className="relative w-full bg-[#110B0B] overflow-hidden py-16 sm:py-24 md:py-32">
+    <section
+      id="about"
+      className="relative w-full bg-[#110B0B] overflow-hidden py-16 sm:py-24 md:py-32"
+    >
       <div className="absolute right-[-10%] top-0 h-full w-full opacity-60 pointer-events-none z-0">
         <AboutPattern className="w-full h-full text-[#3A2A1A]" />
       </div>
