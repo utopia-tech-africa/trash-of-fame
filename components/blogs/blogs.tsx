@@ -71,7 +71,7 @@ export const Blogs = () => {
               <ArrowLeft className="w-8 h-8 text-white" />
             </button>
             <button className="p-2">
-              <ArrowRight className="w-8 h- text-white" />
+              <ArrowRight className="w-8 h-8 text-white" />
             </button>
           </div>
         </div>
