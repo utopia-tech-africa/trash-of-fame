@@ -6,7 +6,7 @@ import { ChevronsDown, ChevronsUp } from "lucide-react";
 
 export const Hero = () => {
   return (
-    <section className="relative w-full h-screen overflow-hidden">
+    <section className="relative w-full h-[95vh] overflow-hidden">
       <div className="absolute inset-0">
         <Image
           src={HeroImg}

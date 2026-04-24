@@ -29,7 +29,7 @@ const blogs = [
 
 export const Blogs = () => {
   return (
-    <ComponentLayout className="flex flex-col gap-18 b-16 sm:pb-24 md:pb-32">
+    <ComponentLayout className="flex flex-col gap-18 pb-16 sm:pb-24 md:pb-32">
       <div className="flex flex-col gap-2 items-center justify-center text-center max-w-2xl mx-auto">
         <h2 className="font-bold text-[28px] md:text-[36px] lg:text-[42px] leading-[1.2] text-[#fff8f1] uppercase">
           get updated on the movement
@@ -71,7 +71,7 @@ export const Blogs = () => {
               <ArrowLeft className="w-8 h-8 text-white" />
             </button>
             <button className="p-2">
-              <ArrowRight className="w-8 h- text-white" />
+              <ArrowRight className="w-8 h-8 text-white" />
             </button>
           </div>
         </div>
