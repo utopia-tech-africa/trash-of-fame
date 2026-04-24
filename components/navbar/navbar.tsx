@@ -59,9 +59,12 @@ export const Navbar = () => {
               })}
             </div>
 
-            <div className="text-center font-light tracking-wide px-6 py-5">
+            <a
+              href="#"
+              className="text-center font-light tracking-wide px-6 py-5"
+            >
               Trash of Fame
-            </div>
+            </a>
 
             <div className="flex justify-end">
               {navRight.map((item) => (

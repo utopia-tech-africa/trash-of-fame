@@ -1,11 +1,11 @@
 import Image from "next/image";
 import {
-  FaFacebookF,
+  // FaFacebookF,
   FaInstagram,
-  FaLinkedinIn,
-  FaYoutube,
+  // FaLinkedinIn,
+  // FaYoutube,
 } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+// import { FaXTwitter } from "react-icons/fa6";
 import { TOFImg } from "@/assets/images";
 
 const footerItems = [
@@ -18,11 +18,11 @@ const footerItems = [
 ];
 
 const socialLinks = [
-  { label: "Facebook", href: "#", Icon: FaFacebookF },
+  // { label: "Facebook", href: "#", Icon: FaFacebookF },
   { label: "Instagram", href: "#", Icon: FaInstagram },
-  { label: "X", href: "#", Icon: FaXTwitter },
-  { label: "LinkedIn", href: "#", Icon: FaLinkedinIn },
-  { label: "YouTube", href: "#", Icon: FaYoutube },
+  // { label: "X", href: "#", Icon: FaXTwitter },
+  // { label: "LinkedIn", href: "#", Icon: FaLinkedinIn },
+  // { label: "YouTube", href: "#", Icon: FaYoutube },
 ];
 
 export const Footer = () => {

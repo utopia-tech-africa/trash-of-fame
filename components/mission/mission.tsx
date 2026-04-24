@@ -9,7 +9,7 @@ export const Mission = () => {
     <section className="py-16 sm:py-24 md:py-32">
       <ComponentLayout>
         <div className="relative">
-          <div className="hidden lg:block absolute right-[23%] top-[66%] -translate-y-1/2 pointer-events-none">
+          <div className="hidden lg:block absolute right-[22%] top-[66%] -translate-y-1/2 pointer-events-none">
             <MissionPattern className="w-full h-auto" />
           </div>
 
