@@ -1,10 +1,14 @@
 import Image, { StaticImageData } from "next/image";
+import { urlFor } from "@/sanity/lib/image";
+import { cn } from "@/lib/utils";
 
 interface BlogCardProps {
-  image: StaticImageData;
+  image?: StaticImageData;
   title: string;
-  description: string;
+  description?: string;
   readTime: string;
+  isPushedUp?: boolean;
+  externalUrl?: string;
 }
 
 export const BlogCard = ({
@@ -12,23 +16,50 @@ export const BlogCard = ({
   title,
   description,
   readTime,
+  isPushedUp,
+  externalUrl,
 }: BlogCardProps) => {
+  const Wrapper = externalUrl ? "a" : "div";
+
   return (
-    <div className="flex flex-col gap-6 w-full max-w-[424px]">
-      <div className="h-[253px] md:h-[328px] relative w-full">
-        <Image src={image} alt={title} fill className="object-cover" />
+    <Wrapper
+      href={externalUrl || undefined}
+      target={externalUrl ? "_blank" : undefined}
+      className="flex flex-col h-full gap-6 w-[320px] md:w-90 lg:w-[424px]"
+    >
+      <div
+        className={cn(
+          "h-[253px] md:h-[328px] relative w-full shrink-0 transition-transform duration-500",
+          isPushedUp ? "lg:-translate-y-10" : "",
+        )}
+      >
+        <Image
+          src={image ? urlFor(image).url() : ""}
+          alt={title}
+          fill
+          className="object-cover"
+        />
       </div>
-      <div className="flex flex-col gap-6 text-white">
+
+      <div className="flex flex-col flex-1 gap-6 text-white">
         <div className="flex flex-col gap-3">
-          <h3 className="text-[24px] font-medium leading-[1.2] uppercase">
+          <h3 className="text-[24px] font-medium leading-[1.2] uppercase line-clamp-3">
             {title}
           </h3>
-          <p className="text-[rgba(255,255,255,0.6)] leading-[1.2] w-full">
-            {description}
+
+          {description && (
+            <p className="text-[rgba(255,255,255,0.6)] leading-[1.2] w-full line-clamp-4">
+              {description}
+            </p>
+          )}
+        </div>
+
+        <div className="mt-auto">
+          <p className="text-[rgba(255,255,255,0.6)] leading-[1.2]">
+            {readTime} mins read
           </p>
         </div>
-        <p className="text-[rgba(255,255,255,0.6)] leading-[1.2]">{readTime}</p>
       </div>
-    </div>
+    </Wrapper>
   );
 };
