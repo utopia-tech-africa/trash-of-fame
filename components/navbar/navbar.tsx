@@ -47,13 +47,12 @@ export const Navbar = () => {
                   <a
                     key={item.label}
                     href={item.href}
-                    className={`py-5 ${
-                      isMedia
-                        ? "border-x border-[#402F1D] hover:bg-white/10 transition-colors ease-in px-4.5 duration-300"
-                        : "hover:bg-white/10 transition-colors ease-in duration-300 pr-4.5"
+                    className={`relative overflow-hidden py-5 group ${
+                      isMedia ? "border-x border-[#402F1D] px-4.5" : "px-4.5"
                     }`}
                   >
-                    {item.label}
+                    <span className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+                    <span className="relative z-10">{item.label}</span>
                   </a>
                 );
               })}
@@ -71,9 +70,10 @@ export const Navbar = () => {
                 <a
                   key={item.label}
                   href={item.href}
-                  className="px-4.5  py-5 border-l border-[#402F1D] hover:bg-white/10 transition-colors ease-in duration-300 text-nowrap"
+                  className="relative overflow-hidden px-4.5 py-5 border-l border-[#402F1D] group text-nowrap"
                 >
-                  {item.label}
+                  <span className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+                  <span className="relative z-10">{item.label}</span>
                 </a>
               ))}
             </div>
