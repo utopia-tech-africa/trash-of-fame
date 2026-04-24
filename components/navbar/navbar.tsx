@@ -11,8 +11,8 @@ const navLeft = [
 ];
 
 const navRight = [
-  { label: "Volunteer", href: "#volunteer" },
-  { label: "Support", href: "#support" },
+  { label: "Volunteer", href: "#contact" },
+  { label: "Support", href: "#contact" },
   { label: "Contact us", href: "#contact" },
 ];
 
