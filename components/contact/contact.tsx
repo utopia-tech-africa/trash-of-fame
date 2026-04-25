@@ -99,11 +99,11 @@ export const Contact = () => {
       <div className="absolute bottom-[-40%] left-[-20%] w-125 h-125 md:w-175 md:h-175 bg-[radial-gradient(circle,rgba(120,72,28,0.35)_0%,rgba(15,10,6,0)_70%)] pointer-events-none" />
       {/* left */}
       <div className=" flex-col gap-3 py-6 sm:py-8 w-full text-center lg:text-left lg:w-1/2">
-        <h1 className=" hidden md:flex font-bold leading-[1.2] text-2xl sm:text-3xl md:text-4xl lg:text-[42px] text-[#fff8f1] uppercase">
+        <h1 className=" hidden lg:flex font-bold leading-[1.2] text-2xl sm:text-3xl md:text-4xl lg:text-[42px] text-[#fff8f1] uppercase">
           Your moment to act is now
         </h1>
 
-        <h1 className="block md:hidden font-bold leading-[1.2] text-2xl sm:text-3xl md:text-4xl lg:text-[42px] text-[#fff8f1] uppercase">
+        <h1 className="block lg:hidden font-bold leading-[1.2] text-2xl sm:text-3xl md:text-4xl text-[#fff8f1] uppercase">
           Your moment to act <br />
           is now
         </h1>

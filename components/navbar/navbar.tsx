@@ -11,8 +11,8 @@ const navLeft = [
 ];
 
 const navRight = [
-  { label: "Volunteer", href: "#volunteer" },
-  { label: "Support", href: "#support" },
+  { label: "Volunteer", href: "#contact" },
+  { label: "Support", href: "#contact" },
   { label: "Contact us", href: "#contact" },
 ];
 
@@ -83,7 +83,7 @@ export const Navbar = () => {
             {/* left */}
             <button
               onClick={() => setMobileMenuOpen(true)}
-              className="text-sm font-medium text-left px-4 py-3 flex items-center border-r border-[#402F1D]"
+              className="text-sm font-medium text-left px-4 py- flex items-center border-r border-[#402F1D]"
             >
               Menu
             </button>
@@ -104,11 +104,23 @@ export const Navbar = () => {
 
       {/* mobile*/}
       <div
-        className={`md:hidden fixed left-0 top-0 w-full h-full z-50 transition-transform duration-500 ease-out ${
-          mobileMenuOpen ? "translate-y-0" : "-translate-y-full"
+        className={`md:hidden fixed inset-0 z-50 transition-opacity duration-300 ${
+          mobileMenuOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
         }`}
       >
-        <div className="w-full h-full bg-[#110B0B] border-b border-[#402F1D] flex flex-col">
+        <div
+          className="absolute inset-0 bg-black/60"
+          onClick={() => setMobileMenuOpen(false)}
+        />
+
+        {/* Menu panel */}
+        <div
+          className={`absolute top-0 left-0 w-full h-[28vh] bg-[#110B0B] border-b border-[#402F1D] flex flex-col transition-transform duration-500 ease-out ${
+            mobileMenuOpen ? "translate-y-0" : "-translate-y-full"
+          }`}
+        >
           <div className="flex items-center justify-between px-6 py-4 border-b border-[#402F1D]">
             <span className="text-sm font-medium">Menu</span>
 

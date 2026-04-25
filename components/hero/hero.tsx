@@ -31,7 +31,9 @@ export const Hero = () => {
         </div>
 
         <div className="mb-12 flex flex-col items-center gap-4">
-          <p className="font-semibold">Africa’s waste crisis is growing</p>
+          <p className="font-semibold text-center text-xl md:[30px] lg:[32px]">
+            Africa’s waste crisis is growing
+          </p>
 
           <Button
             variant="outline"
@@ -42,7 +44,9 @@ export const Hero = () => {
               <ChevronsUp className="w-5 h-5 absolute inset-0 rotate-180 translate-y-full transition-transform duration-300 group-hover:translate-y-0" />
             </span>
 
-            <span className="text-white font-semibold">Join the movement</span>
+            <a href="#contact" className="text-white font-semibold">
+              Join the movement
+            </a>
 
             <span className="relative w-4 h-4 overflow-hidden text-white">
               <ChevronsDown className="w-5 h-5 absolute inset-0 transition-transform duration-300 group-hover:-translate-y-full" />

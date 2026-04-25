@@ -9,11 +9,11 @@ import {
 import { TOFImg } from "@/assets/images";
 
 const footerItems = [
-  { label: "Home", href: "#home" },
+  { label: "Home", href: "#" },
   { label: "About", href: "#about" },
   { label: "Media", href: "#media" },
-  { label: "Volunteer", href: "#volunteer" },
-  { label: "Support", href: "#support" },
+  { label: "Volunteer", href: "#contact" },
+  { label: "Support", href: "#contact" },
   { label: "Contact us", href: "#contact" },
 ];
 
