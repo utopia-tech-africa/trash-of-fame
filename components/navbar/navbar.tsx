@@ -138,7 +138,7 @@ export const Navbar = () => {
                 key={item.label}
                 href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="relative overflow-hidden px-8 text-white text-center py-4 border-b border-[#402F1D] group text-sm"
+                className="relative overflow-hidden px-8 text-white text-center py-4 border-b border-[#402F1D] bg-[#110B0B] group text-sm"
               >
                 <span className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
                 <span className="relative z-10">{item.label}</span>
