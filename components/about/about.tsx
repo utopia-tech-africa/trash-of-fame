@@ -57,10 +57,10 @@ export const About = () => {
 
       <ComponentLayout className="relative">
         <div className="relative max-w-275">
-          <h1 className="relative z-20 text-white font-extrabold leading-[1.1] sm:leading-[0.95] tracking-[-0.5px] sm:tracking-[-1px]  text-3xl sm:text-4xl md:text-6xl lg:text-[98px]">
-            This Earth Day,
+          <h1 className="relative z-20 text-white font-extrabold leading-[1.1] sm:leading-[0.95] tracking-[-0.5px] sm:tracking-[-1px]  text-3xl sm:text-4xl md:text-6xl lg:text-[92px]">
+            We took a stand
             <br />
-            we&apos;re taking a stand,
+            this Earth Day,
             <br />
             one stitch at a time
           </h1>
