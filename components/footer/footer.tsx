@@ -59,20 +59,22 @@ export const Footer = () => {
           </a>
         ))}
 
-        <div className="flex items-center justify-center gap-5 md:gap-6 py-4 md:py-5 w-full">
-          {socialLinks.map(({ label, href, Icon }) => (
-            <a
-              key={label}
-              href={href}
-              aria-label={label}
-              target="_blank"
-              className="text-neutral-100 flex items-center gap-2"
-            >
+        {socialLinks.map(({ label, href, Icon }) => (
+          <a
+            key={label}
+            href={href}
+            aria-label={label}
+            target="_blank"
+            className="relative overflow-hidden px-4 py-4 text-neutral-100 flex items-center justify-center gap-2 group"
+          >
+            <span className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+
+            <span className="relative z-10 flex items-center gap-2">
               <Icon className="h-3 w-3 md:h-4 md:w-4" />
               <p>{label}</p>
-            </a>
-          ))}
-        </div>
+            </span>
+          </a>
+        ))}
       </div>
     </footer>
   );
