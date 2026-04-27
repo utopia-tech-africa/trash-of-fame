@@ -19,7 +19,11 @@ const footerItems = [
 
 const socialLinks = [
   // { label: "Facebook", href: "#", Icon: FaFacebookF },
-  { label: "Instagram", href: "#", Icon: FaInstagram },
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/groovy_dott?igsh=MTcwOWdhd2Eya3ll&utm_source=qr",
+    Icon: FaInstagram,
+  },
   // { label: "X", href: "#", Icon: FaXTwitter },
   // { label: "LinkedIn", href: "#", Icon: FaLinkedinIn },
   // { label: "YouTube", href: "#", Icon: FaYoutube },
@@ -55,18 +59,22 @@ export const Footer = () => {
           </a>
         ))}
 
-        <div className="flex items-center justify-center gap-5 md:gap-6 py-4 md:py-5 w-full">
-          {socialLinks.map(({ label, href, Icon }) => (
-            <a
-              key={label}
-              href={href}
-              aria-label={label}
-              className="text-neutral-100"
-            >
-              <Icon className="h-4 w-4 md:h-5 md:w-5" />
-            </a>
-          ))}
-        </div>
+        {socialLinks.map(({ label, href, Icon }) => (
+          <a
+            key={label}
+            href={href}
+            aria-label={label}
+            target="_blank"
+            className="relative overflow-hidden px-4 py-4 text-neutral-100 flex items-center justify-center gap-2 group"
+          >
+            <span className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out" />
+
+            <span className="relative z-10 flex items-center gap-2">
+              <Icon className="h-3 w-3 md:h-4 md:w-4" />
+              <p>{label}</p>
+            </span>
+          </a>
+        ))}
       </div>
     </footer>
   );
