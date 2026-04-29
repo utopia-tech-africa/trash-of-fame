@@ -78,7 +78,7 @@ export async function POST(req: Request) {
           message:
             dbSuccess && emailSuccess
               ? "Form submitted successfully."
-              : "Form submitted (partially).",
+              : "Form submitted.",
         },
         { status: 200 },
       );
