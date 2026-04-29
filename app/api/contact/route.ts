@@ -10,9 +10,9 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 const formSchema = z.object({
   fullName: z.string().min(2),
   email: z.string().email(),
-  phone: z.string().min(6),
+  phone: z.string().optional().nullable(),
   interest: z.string().min(1),
-  message: z.string().optional(),
+  message: z.string().optional().nullable(),
 });
 
 export async function POST(req: Request) {
@@ -29,7 +29,7 @@ export async function POST(req: Request) {
         data: {
           fullName: validatedData.fullName,
           email: validatedData.email,
-          phone: validatedData.phone,
+          phone: validatedData.phone || null,
           interest: validatedData.interest,
           message: validatedData.message || null,
         },
@@ -51,9 +51,9 @@ export async function POST(req: Request) {
         react: AdminNotificationEmail({
           fullName: validatedData.fullName,
           email: validatedData.email,
-          phone: validatedData.phone,
+          phone: validatedData.phone || undefined,
           interest: validatedData.interest,
-          message: validatedData.message,
+          message: validatedData.message || undefined,
         }),
       });
 
