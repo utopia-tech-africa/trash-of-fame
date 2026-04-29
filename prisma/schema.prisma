@@ -15,7 +15,7 @@ model ContactMessage {
   id        String   @id @default(cuid())
   fullName  String
   email     String
-  phone     String
+  phone     String?
   interest  String
   message   String?  @db.Text
   status    String   @default("pending")

@@ -14,7 +14,7 @@ import * as React from "react";
 interface AdminNotificationEmailProps {
   fullName: string;
   email: string;
-  phone: string;
+  phone?: string;
   interest: string;
   message?: string;
 }
