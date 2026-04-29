@@ -1,18 +1,15 @@
-import type { Metadata } from "next";
 import { Epilogue } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Script from "next/script";
+import { createMetadata } from "@/lib/create-metadata";
 
 const epilogue = Epilogue({
   subsets: ["latin"],
   variable: "--font-epilogue",
 });
 
-export const metadata: Metadata = {
-  title: "Trash Of Fame",
-  description: "Reduce, Reuse, Recycle",
-};
+export const metadata = createMetadata();
 
 export default function RootLayout({
   children,
