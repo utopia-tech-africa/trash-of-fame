@@ -142,7 +142,7 @@ export const Blogs = ({ blogs = [] }: BlogsProps) => {
                     image={blog.image}
                     title={blog.title}
                     description={blog.excerpt || blog.description}
-                    readTime={blog.readTime || "2 mins read"}
+                    readTime={blog.readTime || ""}
                     isPushedUp={
                       index === activeIndex && index !== blogs.length - 1
                     }
