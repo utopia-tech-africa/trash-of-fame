@@ -41,7 +41,7 @@ export const blog = defineType({
     defineField({
       name: "excerpt",
       type: "string",
-      description: "Short summary (20–20 words)",
+      description: "Short summary (20–30 words)",
       validation: (Rule) => Rule.max(160),
     }),
 
