@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 interface BlogCardProps {
   image?: StaticImageData;
   title: string;
+  source?: string;
   description?: string;
   readTime: string;
   isPushedUp?: boolean;
@@ -14,6 +15,7 @@ interface BlogCardProps {
 export const BlogCard = ({
   image,
   title,
+  source,
   description,
   readTime,
   isPushedUp,
@@ -54,10 +56,11 @@ export const BlogCard = ({
           )}
         </div>
 
-        <div className="mt-auto">
+        <div className="mt-auto flex justify-between">
           <p className="text-[rgba(255,255,255,0.6)] leading-[1.2]">
             {readTime} mins read
           </p>
+          <p className="text-[rgba(255,255,255,0.6)] leading-[1.2]">{source}</p>
         </div>
       </div>
     </Wrapper>
