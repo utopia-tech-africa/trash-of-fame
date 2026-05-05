@@ -7,6 +7,7 @@ export const blogQuery = `
   readTime,
   image,
   video,
-  externalUrl
+  externalUrl,
+  source
 }
 `;

@@ -20,9 +20,14 @@ export const blog = defineType({
     }),
 
     defineField({
+      name: "source",
+      type: "string",
+      validation: (Rule) => Rule.required(),
+    }),
+
+    defineField({
       name: "image",
       type: "image",
-      options: { hotspot: true },
     }),
 
     // optional video

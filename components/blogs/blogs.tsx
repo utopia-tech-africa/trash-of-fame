@@ -13,6 +13,7 @@ export interface BlogItem {
   _id?: string;
   image?: StaticImageData;
   title: string;
+  source?: string;
   description?: string;
   excerpt?: string;
   readTime?: string;
@@ -141,6 +142,7 @@ export const Blogs = ({ blogs = [] }: BlogsProps) => {
                   <BlogCard
                     image={blog.image}
                     title={blog.title}
+                    source={blog.source}
                     description={blog.excerpt || blog.description}
                     readTime={blog.readTime || ""}
                     isPushedUp={
